@@ -14,7 +14,7 @@ Route::get('students/trashed', [StudentController::class, 'trashed']) -> name('s
 
 Route::get('students/restore/{id}', [StudentController::class, 'restore']) -> name('students.restore');
 
-Route::resource('students', StudentController::class) -> middleware('auth');
+Route::resource('students', controller: StudentController::class) -> middleware('auth');
 
 Route::get('students/destroy/{id}', [StudentController::class, 'destroy']) -> name('students.destroy')-> middleware('auth');
 
@@ -24,9 +24,9 @@ Route::get('courses/trashed', [CoursesController::class, 'trashed']) -> name('co
 
 Route::get('courses/restore/{id}', [CoursesController::class, 'restore']) -> name('courses.restore');
 
-Route::resource('courses', CoursesController::class);
+Route::resource('courses', controller:CoursesController::class);
 
-Route::resource('faculties', FacultyController::class);
+Route::resource('faculties', controller: FacultyController::class) -> middleware('auth');;
 
 Route::get('courses/destroy/{id}', [CoursesController::class, 'destroy']) -> name('courses.destroy');
 

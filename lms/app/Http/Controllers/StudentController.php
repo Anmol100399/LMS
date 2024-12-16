@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-use App\Models\Courses;
+use App\Models\courses;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 
@@ -33,7 +33,7 @@ class StudentController extends Controller
     public function create()
     {
         return view('students.create')
-        ->with('courses', Courses::all());
+        ->with('courses', courses::all());
     }
 
     /**
