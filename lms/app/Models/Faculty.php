@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Faculty extends Model
 {
-    public  function courses(){
-        return $this->hasMany(Courses::class);
+    /** @use HasFactory<\Database\Factories\FacultyFactory> */
+    use HasFactory;
+
+    public function courses(){
+       return $this -> hasMany(courses::class);
     }
 }

@@ -8,20 +8,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class courses extends Model
 {
-    /** @use HasFactory<\Database\Factories\CoursesFactory> */
-    use HasFactory, SoftDeletes;
+    /** @use HasFactory<\Database\Factories\CourseFactory> */
+    use HasFactory;
+    use SoftDeletes;
 
+    protected $dates = ['deleted_at'];
     protected $fillable = [
-        'course_name',      
+        'course_name',
         'course_index',
-        'course_description',
-        
+        'course_description'
     ];
+    
     public function faculty(){
         return $this -> belongsTo(Faculty::class);
     }
 
     public function students(){
-        return $this -> belongsTo(Student::class);
+        return $this -> belongsToMany(Student::class);
     }
 }

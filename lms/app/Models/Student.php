@@ -18,7 +18,8 @@ class Student extends Model
         'lname',
         'email'
     ];
-    public function courses() {
-        return $this-> belongsToMany(Courses::class);
+    public function courses(){
+        return $this -> belongsToMany(courses::class);
     }
+
 }

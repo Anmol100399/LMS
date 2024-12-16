@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>All Students</h1>
-    <h1>All Courses</h1>
+    @foreach ($students as $student)
+        {{ $student -> fname }}
+        <br>
+    @endforeach
 </body>
 </html>
