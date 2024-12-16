@@ -11,11 +11,17 @@ class courses extends Model
     /** @use HasFactory<\Database\Factories\CoursesFactory> */
     use HasFactory, SoftDeletes;
 
-
     protected $fillable = [
         'course_name',      
         'course_index',
         'course_description',
         
     ];
+    public function faculty(){
+        return $this -> belongsTo(Faculty::class);
+    }
+
+    public function students(){
+        return $this -> belongsTo(Student::class);
+    }
 }

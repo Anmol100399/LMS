@@ -23,6 +23,10 @@
                     <label for="email" class="form-label">Email Address</label>
                     <input type="text" class="form-control" id="email" name="email">
                 </div>
+                <div class="mb-3">
+                    <label for="courses" class="form-label">Select courses</label>
+                    <input type="text" class="form-control" id="courses" name="courses">
+                </div>
                 <button type="submit" class="btn btn-primary">Add Student</button>
             </form>
         </div>

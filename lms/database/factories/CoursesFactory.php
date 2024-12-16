@@ -17,9 +17,10 @@ class CoursesFactory extends Factory
     public function definition(): array
     {
         return [
-            'course_name' => fake()->words(3, true), //"Introduction to Laravel")
-            'course_index' => strtoupper(fake()->bothify('???###')), //"ABC123")
-            'course_description' => fake()->paragraph(), //fake course description
+            'course_name' => fake()->words(3, true), 
+            'course_index' => strtoupper(fake()->bothify('???###')), 
+            'course_description' => fake()->paragraph(), 
+            'faculty_id' => fake()->numberBetween(1,3)
         ];
     }
 }
